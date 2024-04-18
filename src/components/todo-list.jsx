@@ -11,6 +11,7 @@ export default function TodoList() {
 
     return (
         <div className="space-y-2">
+            <h2 className="text-2xl font-bold">Todo Task</h2>
             {todos.map(todo => (
                 <div
                     key={todo.id}

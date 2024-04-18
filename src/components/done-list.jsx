@@ -11,6 +11,7 @@ export default function DoneList() {
 
     return (
         <div className="space-y-2">
+            <h2 className="text-2xl font-bold">Done and Dusted!</h2>
             {doneItems.map(todo => (
                 <div
                     key={todo.id}
