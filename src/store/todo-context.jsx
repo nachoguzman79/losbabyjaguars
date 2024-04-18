@@ -10,22 +10,11 @@ export default function TodoProvider({children}) {
         const localTodos = localStorage.getItem("todos");
         return localTodos ? JSON.parse(localTodos) : [];
     });
-    const [doneItems, setDoneItems] = useState(() => {
-        // load done items from local storage if it is existing
-        const localDoneItems = localStorage.getItem("doneItems");
-        return localDoneItems ? JSON.parse(localDoneItems) : [];
-    });
 
     useEffect(() => {
         // save todos to local storage whenever they change
         localStorage.setItem("todos", JSON.stringify(todos));
     }, [todos])
-
-    useEffect(() => {
-        // save todos to local storage whenever they change
-        localStorage.setItem("doneItems", JSON.stringify(doneItems));
-    }, [doneItems])
-
 
     const addTodo = (newTask) => {
         setTodos([...todos, { id: Date.now(), task: newTask, completed: false}]);
@@ -35,43 +24,36 @@ export default function TodoProvider({children}) {
         setTodos(todos.filter(todo => todo.id !== id));
     }
 
-    const deleteDoneItem = (id) => {
-        setDoneItems(doneItems.filter(todo => todo.id !== id));
-    }
-
     const markAsDone = (id) => {
-        const filteredTodos = todos.filter(todo => {
+        const updatedTodos = todos.map(todo => {
             if (todo.id === id) {
-                setDoneItems([...doneItems, { ...todo, completed: true }]);
-                return false;
+                return { ...todo, completed: true };
             }
-            return true;
+            return todo;
         })
 
-        setTodos(filteredTodos); 
+        setTodos(updatedTodos);
     }
 
     const undo = (id) => {
-        const filteredTodos = doneItems.filter(doneItem => {
-            if (doneItem.id === id) {
-                setTodos([...todos, { ...doneItem, completed: false}]);
-                return false;
+        const updatedTodos = todos.map(todo => {
+            if (todo.id === id) {
+                return { ...todo, completed: false };
             }
-            return true;
+            return todo;
         })
-        setDoneItems(filteredTodos);
+
+        setTodos(updatedTodos);
     }
 
     console.log(todos);
-    console.log(doneItems);
+
     return (
         <TodoContext.Provider value={{
             todos,
-            doneItems,
             addTodo,
             deleteTodo,
             markAsDone,
-            deleteDoneItem,
             undo
         }}>
             {children}

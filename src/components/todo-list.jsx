@@ -3,7 +3,9 @@ import { useTodos } from "../store/todo-context";
 export default function TodoList() {
     const { todos, deleteTodo, markAsDone } = useTodos();
 
-    if (todos.length === 0) {
+    const pendingTodos = todos.filter(todo => todo.completed === false);
+
+    if (pendingTodos.length === 0) {
         return (
             <p className="text-gray-500 mt-3">No tasks added yet.</p>
         )
@@ -12,7 +14,7 @@ export default function TodoList() {
     return (
         <div className="space-y-2">
             <h2 className="text-2xl font-bold">Todo Task</h2>
-            {todos.map(todo => (
+            {pendingTodos.map(todo => (
                 <div
                     key={todo.id}
                     className="flex items-center bg-white shadow-md p-3"
