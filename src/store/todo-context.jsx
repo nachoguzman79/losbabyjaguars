@@ -35,6 +35,10 @@ export default function TodoProvider({children}) {
         setTodos(todos.filter(todo => todo.id !== id));
     }
 
+    const deleteDoneItem = (id) => {
+        setDoneItems(doneItems.filter(todo => todo.id !== id));
+    }
+
     const markAsDone = (id) => {
         const filteredTodos = todos.filter(todo => {
             if (todo.id === id) {
@@ -47,14 +51,28 @@ export default function TodoProvider({children}) {
         setTodos(filteredTodos); 
     }
 
+    const undo = (id) => {
+        const filteredTodos = doneItems.filter(doneItem => {
+            if (doneItem.id === id) {
+                setTodos([...todos, { ...doneItem, completed: false}]);
+                return false;
+            }
+            return true;
+        })
+        setDoneItems(filteredTodos);
+    }
+
     console.log(todos);
     console.log(doneItems);
     return (
         <TodoContext.Provider value={{
             todos,
+            doneItems,
             addTodo,
             deleteTodo,
-            markAsDone
+            markAsDone,
+            deleteDoneItem,
+            undo
         }}>
             {children}
         </TodoContext.Provider>
