@@ -11,11 +11,16 @@ export default function TodoProvider({children}) {
         setTodos([...todos, { id: Date.now(), task: newTask, completed: false}]);
     }
 
+    const deleteTodo = (id) => {
+        setTodos(todos.filter(todo => todo.id !== id));
+    }
+
     console.log(todos);
     return (
         <TodoContext.Provider value={{
             todos,
-            addTodo
+            addTodo,
+            deleteTodo
         }}>
             {children}
         </TodoContext.Provider>

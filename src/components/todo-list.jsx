@@ -1,7 +1,7 @@
 import { useTodos } from "../store/todo-context";
 
 export default function TodoList() {
-    const { todos } = useTodos();
+    const { todos, deleteTodo } = useTodos();
 
     if (todos.length === 0) {
         return (
@@ -24,6 +24,7 @@ export default function TodoList() {
                     </button>
                     <button 
                         className="btn bg-amber-500 text-amber-100 btn-sm ml-2"
+                        onClick={() => deleteTodo(todo.id)}
                     >
                         Delete
                     </button>
