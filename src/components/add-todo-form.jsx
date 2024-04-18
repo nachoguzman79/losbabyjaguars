@@ -27,7 +27,7 @@ export default function AddTodoForm() {
                     onChange={e => setTask(e.target.value)}
                 />
                 <button 
-                    className="btn btn-primary"
+                    className="btn btn-primary text-amber-50"
                     type="submit"
                 >
                     Add

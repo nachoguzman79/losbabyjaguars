@@ -1,5 +1,6 @@
 import AddTodoForm from "./components/add-todo-form"
-import { TodoProvider } from "./store/todo-context"
+import TodoProvider from "./store/todo-context"
+import TodoList from "./components/todo-list";
 
 export default function App() {
   return (
@@ -7,6 +8,11 @@ export default function App() {
      <div className="flex flex-col items-center min-h-full max-w-xl mx-auto p-10 gap-10">
         <h1 className="text-3xl font-bold underline">Todo App</h1>
         <AddTodoForm />
+
+        <div className="w-full">
+          <h2 className="text-2xl font-bold">Todo Task</h2>
+          <TodoList />
+        </div>
      </div>
    </TodoProvider>
   )

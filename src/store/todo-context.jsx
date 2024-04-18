@@ -4,7 +4,7 @@ const TodoContext = createContext();
 
 export const useTodos = () => useContext(TodoContext);
 
-export function TodoProvider({children}) {
+export default function TodoProvider({children}) {
     const [todos, setTodos] = useState([])
 
     const addTodo = (newTask) => {
