@@ -1,7 +1,7 @@
 import { useTodos } from "../store/todo-context";
 
 export default function TodoList() {
-    const { todos, deleteTodo } = useTodos();
+    const { todos, deleteTodo, markAsDone } = useTodos();
 
     if (todos.length === 0) {
         return (
@@ -19,6 +19,7 @@ export default function TodoList() {
                     <span className="flex-1">{todo.task}</span>
                     <button 
                         className="btn btn-sm btn-warning text-gray-100"
+                        onClick={() => markAsDone(todo.id)}
                     >
                         Done
                     </button>
