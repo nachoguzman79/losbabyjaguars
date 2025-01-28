@@ -1,3 +1,17 @@
+
+/* Importar fuentes desde Google Fonts (debe ir antes de las directivas de Tailwind) */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+/* Directivas de Tailwind (deben ir al principio) */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Aplicar la fuente predeterminada globalmente */
+body {
+  font-family: 'cutive-mono', monospace; /* Establece Cutive Mono como la fuente predeterminada */
+}
+
+* {
+    border: 0px solid black;
+  }
