@@ -8,7 +8,9 @@ export default {
     extend: {
       colors: {
         customBlack: "#121107",   // Custom colors
-        customViolet: "#D976CB",  
+        customViolet: "#D976CB", 
+        customBeige: "#eae2b7", 
+        customBackgroundLila: "#D976CB"
       },
       fontFamily: {
         'cutive-mono': ['Cutive Mono', 'serif'],
@@ -23,10 +25,21 @@ export default {
       fontSize: {
         '7.5xl': '82px', // Aquí agregas el tamaño 7.5xl
       },
+      animation: {
+        scroll: "scroll 50s linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-100%)" },
+        },
+      },
     },
   },
-  plugins: [require("daisyui")],  // DaisyUI como plugin
+  plugins: [
+    require("daisyui"),  // DaisyUI como plugin
+  ],
   daisyui: {
     themes: ["wireframe"],  // Tema de DaisyUI
   },
-}
+};

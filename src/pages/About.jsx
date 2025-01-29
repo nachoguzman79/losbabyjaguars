@@ -2,12 +2,12 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="relative max-w-7xl md:mt-[60px] mt-[20px] md:mx-auto px-2 py-10 md:p-20 min-h-screen flex flex-col items-center justify-center">
+    <div className="relative max-w-7xl md:mt-[20px] mt-[20px] md:mx-auto px-2 py-2  min-h-screen flex flex-col items-center justify-center">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full h-full">
         {/* Columna de texto */}
-        <div className="flex flex-col justify-center items-start text-center md:text-left h-full space-y-6">
+        <div className="bg-white/10 p-4 md:p-8 flex flex-col justify-center items-start text-center md:text-left h-full space-y-6">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-left text-gray-900">
-            BABY JAGUARS BIO
+            LOS BABY JAGUARS
           </h1>
 
           {/* Descripción general */}
