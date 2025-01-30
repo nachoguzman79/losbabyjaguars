@@ -3,8 +3,9 @@ import React from 'react';
 const PressPack = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-start p-6">
-      <h1 className="mt-12 text-2xl md:text-4xl font-bold mb-4">DOWNLOADABLE PDFs AND PICTURE</h1>
-      <p className="text-xl text-gray-700 mb-6"></p>
+      <h1 className="mt-12  text-xl md:text-3xl font-bold mb-4">DOWNLOADABLE PDFs - PHOTOS</h1>
+      
+      {/* <p className="text-xl text-gray-700 mb-6"></p> */}
 
       {/* Botón de descarga del Rider */}
       {/* <p className="mt-2 mb-6 text-2xl text-customBlack font-extrabold">DOWNLOAD PDF</p> */}
