@@ -19,7 +19,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-customViolet p-2 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 w-full z-10 bg-customViolet p-2 md:p-8 flex items-center justify-center gap-2 ">
       {/* Logo alineado a la derecha */}
       <div className="flex-none">
         <img src="/logo-bits.png" 
@@ -29,7 +29,7 @@ const NavBar = () => {
 
       {/* Menu para dispositivos pequeños */}
       <div className="lg:hidden">
-        {/* Icono de menú hamburguesa */}
+        {/* Burguer menu icon */}
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="">
           <HiMenu size={40} />
         </button>
