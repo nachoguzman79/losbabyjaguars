@@ -73,7 +73,7 @@ const About = () => {
               Jabier Garrafa Lobaton
             </li>
             <li>
-              <span className="font-semibold text-gray-900">Bongo/Cowbell:</span>{" "}
+              <span className="font-semibold text-gray-900">Bongo/Timbales:</span>{" "}
               Rafael Larrazábal
             </li>
           </ul>

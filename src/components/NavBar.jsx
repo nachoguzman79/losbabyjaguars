@@ -17,7 +17,7 @@ const NavBar = () => {
     { name: "PHOTOS", path: "/photos" },
     { name: "MUSIC", path: "/music" },
     { name: "CONTACT", path: "/contact" },
-    { name: "PRESS-PACK", path: "/press-pack" },
+    { name: "PRESS-PACK/RIDER", path: "/press-pack" },
   ];
 
   return (
