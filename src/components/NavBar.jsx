@@ -14,7 +14,9 @@ const NavBar = () => {
     { name: "HOME", path: "/" },
     { name: "ABOUT", path: "/about" },
     { name: "VIDEOS", path: "/videos" },
+    { name: "PHOTOS", path: "/photos" },
     { name: "MUSIC", path: "/music" },
+    { name: "CONTACT", path: "/contact" },
     { name: "PRESS-PACK", path: "/press-pack" },
   ];
 
@@ -37,7 +39,7 @@ const NavBar = () => {
 
       {/* Menú en dispositivos grandes */}
       <div className="hidden lg:flex-1 lg:flex justify-center">
-        <ul className="flex space-x-6 ">
+        <ul className="flex space-x-14 ">
           {navLinks.map((link, index) => (
             <li key={index}>
               <Link

@@ -5,7 +5,7 @@ const Videos = () => {
   return (
     <div
       className="relative max-w-7xl md:mt-[80px] md:mx-auto px-1 
-    mt-4 min-h-screen flex flex-col items-center justify-center"
+    mt-4 h-auto flex flex-col items-center justify-center"
     >
       {/* <h1 className="text-4xl font-bold mb-4">Videos Page</h1>
       <p className="text-xl text-gray-700 mb-8">Explora los videos aquí.</p> */}

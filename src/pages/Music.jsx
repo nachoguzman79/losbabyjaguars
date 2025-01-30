@@ -3,7 +3,7 @@ import musicPageData from './musicPageData'; // Importamos la data desde su arch
 
 const Music = () => {
   return (
-    <div className="min-h-screen min-w-screen flex flex-col items-center justify-center p-2 md:p-14">
+    <div className="h-auto min-w-screen flex flex-col items-center justify-center p-2 md:p-14">
      
       <div className="grid grid-cols-1 md:grid-cols-2  w-full max-w-5xl">
         {musicPageData.map((item, index) => (

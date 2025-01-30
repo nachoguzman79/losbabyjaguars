@@ -1,12 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import Column from "./components/Column";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Videos from "./pages/Videos";
 import Music from "./pages/Music";
+import Photos from "./pages/Photos";
 import PressPack from "./pages/PressPack";
-import Column from "./components/Column";
+import Contact from "./pages/Contact";
 
 const App = () => {
   const images = [
@@ -33,7 +36,9 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/videos" element={<Videos />} />
+              <Route path="/photos" element={<Photos />} />
               <Route path="/music" element={<Music />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/press-pack" element={<PressPack />} />
             </Routes>
           </div>
