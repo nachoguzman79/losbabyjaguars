@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { HiMenu } from 'react-icons/hi';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const NavBar = () => {
-  // Estado para controlar si el menú está abierto o cerrado
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Obtener la ubicación actual
   const location = useLocation();
 
-  // Lista de elementos del menú
   const navLinks = [
     { name: "HOME", path: "/" },
     { name: "ABOUT", path: "/about" },
@@ -21,33 +17,29 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-10 bg-customViolet p-2 md:p-8 flex items-center justify-center gap-2 ">
-      {/* Logo alineado a la derecha */}
+    <nav className="fixed top-0 left-0 w-full z-10 bg-customViolet p-2 md:p-8 flex items-center justify-center gap-2">
+      {/* Logo */}
       <div className="flex-none">
-        <img src="/logo-bits.png" 
-        alt="Logo" 
-        className="h-12 lg:h-20" />
+        <img src="/logo-bits.png" alt="Logo" className="h-12 lg:h-20" />
       </div>
 
-      {/* Menu para dispositivos pequeños */}
+      {/* Menú para dispositivos pequeños */}
       <div className="lg:hidden">
-        {/* Burguer menu icon */}
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="">
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <HiMenu size={40} />
         </button>
       </div>
 
       {/* Menú en dispositivos grandes */}
       <div className="hidden lg:flex-1 lg:flex justify-center">
-        <ul className="flex space-x-14 ">
+        <ul className="flex space-x-14">
           {navLinks.map((link, index) => (
             <li key={index}>
               <Link
                 to={link.path}
                 className={`text-customBlack font-extrabold hover:text-yellow-50 lg:text-3xl ${
                   location.pathname === link.path
-                  //style underline
-                    ? "underline underline-offset-8 decoration-customBlack" 
+                    ? "underline underline-offset-8 decoration-customBlack"
                     : ""
                 }`}
               >
@@ -60,14 +52,22 @@ const NavBar = () => {
 
       {/* Menú desplegable para dispositivos pequeños */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-16 left-0 w-full bg-customViolet/80 p-8">
-          <ul className="flex flex-col items-center space-y-4">
+        <div className="lg:hidden fixed top-0 left-0 w-full h-full bg-customViolet/90 p-8 flex flex-col items-center">
+          {/* Botón de cierre */}
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-4 right-4 text-customBlack"
+          >
+            <HiX size={40} />
+          </button>
+
+          <ul className="flex flex-col items-center space-y-6 mt-12">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <Link
                   to={link.path}
-                  className="text-customBlack  font-extrabold text-xl hover:text-yellow-100"
-                  onClick={() => setIsMenuOpen(false)} // Cierra el menú al hacer clic
+                  className="text-customBlack font-extrabold text-xl hover:text-yellow-100"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
