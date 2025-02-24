@@ -8,7 +8,7 @@ const PressPack = () => {
       {/* <p className="text-xl text-gray-700 mb-6"></p> */}
 
       {/* Botón de descarga del Rider */}
-      {/* <p className="mt-2 mb-6 text-2xl text-customBlack font-extrabold">DOWNLOAD PDF</p> */}
+      {/* <p className="mt-2 mb-6 text-2xl  font-extrabold">DOWNLOAD PDF</p> */}
       <a
         href="/losbabyjaguars-rider.pdf"
         download

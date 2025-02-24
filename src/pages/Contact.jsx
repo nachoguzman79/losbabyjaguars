@@ -15,9 +15,7 @@ const Contact = () => {
 
         {/* Text on the right */}
         <div className="text-left">
-          {/* <h3 className=" text-3xl sm:text-1xl md:text-4xl xl:text-5xl font-bold from-gray-700 to-gray-900 mb-2">
-            LOS BABY JAGUARS
-          </h3> */}
+          
           <p className="mt-4 text-xl md:text-2xl ">
             {/* <span className="">+491637563885</span> */}
             <br />

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        customBlack: "#121107",   // Custom colors
+        customBlack: "#1A1A1A",  
         customViolet: "#D976CB", 
         customBeige: "#eae2b7", 
         customBackgroundLila: "#D976CB"
@@ -19,11 +19,8 @@ export default {
         'pacifico': ['Pacifico', 'cursive'],
         'special-elite': ['Special Elite', 'cursive'],
       },
-      textColor: {
-        DEFAULT: "#121107", // Establece customBlack como color de texto por defecto
-      },
       fontSize: {
-        '7.5xl': '82px', // Aquí agregas el tamaño 7.5xl
+        '7.5xl': '82px',
       },
       animation: {
         scroll: "scroll 50s linear infinite",
@@ -37,9 +34,9 @@ export default {
     },
   },
   plugins: [
-    require("daisyui"),  // DaisyUI como plugin
+    require("daisyui"),
   ],
   daisyui: {
-    themes: ["wireframe"],  // Tema de DaisyUI
+    themes: ["wireframe"],
   },
 };
