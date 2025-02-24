@@ -15,7 +15,7 @@ const Home = () => {
 
         {/* Columna de texto */}
         <div className="flex flex-col justify-center items-start text-center md:text-left h-full order-2 md:order-1">
-          <h1 className="hidden md:block text-7xl md:text-9xl font-extrabold mb-4 tracking-tight md:flex-auto text-left">
+          <h1 className=" md:block text-7xl md:text-9xl font-extrabold mb-4 tracking-tight md:flex-auto text-left">
             LOS BABY JAGUARS
           </h1>
           <h2 className="text-4xl md:text-7xl font-semibold  tracking-tight md:flex-auto text-left">
@@ -26,8 +26,8 @@ const Home = () => {
           </h3>
         </div>
       </div>
-    </div>
+    </div> 
   );
 };
 
-export default Home;
+export default Home;  
