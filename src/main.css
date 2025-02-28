@@ -13,5 +13,9 @@ body {
 }
 
 * {
-  border: 0px solid black;
+  border: 1px solid white;
+}
+
+html {
+  scroll-behavior: smooth;
 }
